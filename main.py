@@ -7,7 +7,7 @@ Created on Sun Mar  5 18:34:20 2023
 
 from ArrayDeque import ArrayDequeMaxlen
 
-AQM = ArrayDequeMaxlen(20)
+AQM = ArrayDequeMaxlen(100)
 
 # adding last
 print('\nAdding last')

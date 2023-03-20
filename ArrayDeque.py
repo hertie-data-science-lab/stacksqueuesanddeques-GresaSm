@@ -32,18 +32,19 @@ class ArrayDequeMaxlen:
         return self._data[back]
 
     def append(self, e):
-        if self._size == self._maxlen:
+        if self._size == self._maxlen-1:
             raise Exception('Deque is full')
         back = (self._front + self._size) % self._maxlen
         self._data[back] = e
         self._size += 1
 
     def appendleft(self, e):
-        if self._size == self._maxlen:
+        if self._size == self._maxlen-1:
             raise Exception('Deque is full')
+        self._data[(self._front - 1) % self._maxlen] = e
         self._front = (self._front - 1) % self._maxlen
-        self._data[self._front] = e
         self._size += 1
+
 
     def remove(self, e):
         if self.is_empty():
